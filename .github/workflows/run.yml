@@ -1,0 +1,31 @@
+name: Flow
+on:
+  push:
+
+jobs:
+  one:
+    name: one
+    runs-on: ubuntu-latest
+    steps:
+    - name: step-1
+      shell: bash
+      run: echo "Hello world 1" >> "$GITHUB_STEP_SUMMARY"
+    - name: step-2
+      shell: bash
+      run: echo "Hello world 2" >> "$GITHUB_STEP_SUMMARY"
+    - name: step-3
+      shell: bash
+      run: echo "::notice title=For-info-see::See $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+  two:
+    name: two
+    runs-on: ubuntu-latest
+    steps:
+    - name: step-A
+      shell: bash
+      run: echo "Hello world A" >> "$GITHUB_STEP_SUMMARY"
+    - name: step-B
+      shell: bash
+      run: echo "Hello world B" >> "$GITHUB_STEP_SUMMARY"
+    - name: step-C
+      shell: bash
+      run: echo "::notice title=For-info-see::See $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
